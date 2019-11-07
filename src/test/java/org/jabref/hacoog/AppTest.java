@@ -3,12 +3,16 @@
  */
 package org.jabref.hacoog;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest, "");
+    @Test void dateCanBeParsed() {
+        LocalDateTime creationDate = LocalDateTime.parse("2019-10-22T13:31:18Z", DateTimeFormatter.ISO_DATE_TIME);
+        assertNotNull(creationDate);
     }
 }
